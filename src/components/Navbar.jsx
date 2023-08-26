@@ -20,23 +20,23 @@ const Navbar = () => {
       bg={'blackAlpha.800'}
       minH={'50px'}
       shadow={'lg'}
+      justifyContent={'space-between'}
     >
-      <Image
-        src={imgSrc}
-        alt="LeetCode"
-        h={'22px'}
-        m={'10px'}
-        paddingLeft={[null, '90px']}
-        sx={{
-          ':hover': {
-            cursor: 'pointer',
-          },
-        }}
-      />
-
       <Stack direction={['column', 'row']} spacing={[null, 7]}>
+        <Image
+          src={imgSrc}
+          alt="LeetCode"
+          h={'22px'}
+          m={'10px'}
+          paddingLeft={[null, '90px']}
+          sx={{
+            ':hover': {
+              cursor: 'pointer',
+            },
+          }}
+        />
         <Button
-          m={'5px'}
+          my={'5px'}
           variant={'unstyled'}
           color={'whiteAlpha.700'}
           borderRadius={'none'}
@@ -102,6 +102,26 @@ const Navbar = () => {
             </MenuItem>
           </MenuList>
         </Menu>
+      </Stack>
+
+      <Stack>
+        <Button
+          bgColor={'whiteAlpha.200'}
+          color={'orange.400'}
+          borderColor={'transparent'}
+          variant={'outline'}
+          h={'34px'}
+          m={'8px'}
+          maxWidth={'90px'}
+          borderRadius={'md'}
+          sx={{
+            ':hover': {
+              backgroundColor: 'whiteAlpha.300',
+            },
+          }}
+        >
+          <Text fontWeight={'normal'}>Premium</Text>
+        </Button>
       </Stack>
     </Stack>
   );
