@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChakraProvider, theme } from '@chakra-ui/react';
 // import { ColorModeSwitcher } from './ColorModeSwitcher';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/NavBarMain.jsx';
 
 const App = () => {
   return (

@@ -17,25 +17,28 @@ import { FaFlask } from 'react-icons/fa';
 import { BsCardList } from 'react-icons/bs';
 import { GoSignOut } from 'react-icons/go';
 import React from 'react';
-import imgSrc from '../assets/leetcode.svg';
+import imgSrc from '../../assets/leetcode.svg';
 
 const Navbar = () => {
   return (
     <Stack
-      direction={['column', 'row']}
+      direction={('column', 'row')}
       color={'white'}
       bg={'blackAlpha.800'}
-      minH={'50px'}
+      minH={'1rem'}
       shadow={'lg'}
       justifyContent={'space-between'}
+      place-items={'center'}
     >
-      <Stack direction={['column', 'row']} spacing={[null, 7]}>
+      <Stack
+        direction={['column', 'row']}
+        marginLeft={{ base: '50px', md: '70px', lg: '90px' }}
+      >
         <Image
           src={imgSrc}
           alt="LeetCode"
           h={'22px'}
           m={'10px'}
-          paddingLeft={[null, '90px']}
           sx={{
             ':hover': {
               cursor: 'pointer',
@@ -44,6 +47,7 @@ const Navbar = () => {
         />
         <Button
           my={'5px'}
+          mx={'15px'}
           variant={'unstyled'}
           color={'whiteAlpha.700'}
           borderRadius={'none'}
@@ -76,21 +80,24 @@ const Navbar = () => {
           </Text>
         </Button>
 
-        <Menu isLazy closeOnBlur={'true'} placement="auto">
+        <Menu closeOnBlur={'true'} placement="auto">
           <MenuButton
             color={'orange.400'}
             fontSize={'mg'}
             fontFamily={'Roboto'}
             fontWeight={'normal'}
+            mx={'15px'}
           >
-            Store <ChevronDownIcon />
+            <Stack direction={'row'}>
+              <Text>Store</Text> <ChevronDownIcon my={'auto'} />
+            </Stack>
           </MenuButton>
-          <MenuList bg={'blackAlpha.800'} minWidth={'100px'}>
+          <MenuList bg={'blackAlpha.800'} minWidth={'100px'} marginTop={'5px'}>
             {/* MenuItems are not rendered unless Menu is open */}
             <MenuItem
               bg={'transparent'}
               color={'orange.400'}
-              _hover={{ bg: 'whiteAlpha.200', color: 'blue' }}
+              _hover={{ bg: 'whiteAlpha.200', color: 'lightblue' }}
               sx={{
                 justifyContent: 'center',
               }}
@@ -111,25 +118,10 @@ const Navbar = () => {
         </Menu>
       </Stack>
 
-      <Stack direction={[null, 'row']}>
-        <Button
-          bgColor={'whiteAlpha.200'}
-          color={'orange.400'}
-          borderColor={'transparent'}
-          variant={'outline'}
-          h={'34px'}
-          m={'8px'}
-          maxWidth={'90px'}
-          borderRadius={'md'}
-          sx={{
-            ':hover': {
-              backgroundColor: 'whiteAlpha.300',
-            },
-          }}
-        >
-          <Text fontWeight={'normal'}>Premium</Text>
-        </Button>
-
+      <Stack
+        direction={['column', 'row']}
+        marginRight={{ base: '50px', md: '70px', lg: '90px' }}
+      >
         <Button
           color={'whiteAlpha.600'}
           variant={'ghost'}
@@ -164,7 +156,7 @@ const Navbar = () => {
           </Text>
         </Button>
 
-        <Menu placement="auto">
+        <Menu isLazy placement={'bottom-end'} preventOverflow="false">
           <MenuButton
             as={IconButton}
             aria-label="Options"
@@ -172,7 +164,6 @@ const Navbar = () => {
             variant={'unstyled'}
             h={'34px'}
             my={'8px'}
-            marginRight={[null, '90px']}
             sx={{
               padding: '2px',
             }}
@@ -256,6 +247,24 @@ const Navbar = () => {
             </MenuItem>
           </MenuList>
         </Menu>
+
+        <Button
+          bgColor={'whiteAlpha.200'}
+          color={'orange.400'}
+          borderColor={'transparent'}
+          variant={'outline'}
+          h={'34px'}
+          m={'8px'}
+          maxWidth={'90px'}
+          borderRadius={'md'}
+          sx={{
+            ':hover': {
+              backgroundColor: 'whiteAlpha.300',
+            },
+          }}
+        >
+          <Text fontWeight={'normal'}>Premium</Text>
+        </Button>
       </Stack>
     </Stack>
   );
