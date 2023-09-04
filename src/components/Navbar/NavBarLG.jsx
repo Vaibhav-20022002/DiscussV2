@@ -25,7 +25,7 @@ const Navbar = () => {
       direction={('column', 'row')}
       color={'white'}
       bg={'blackAlpha.800'}
-      minH={'1rem'}
+      minH={'50px'}
       shadow={'lg'}
       justifyContent={'space-between'}
       place-items={'center'}
