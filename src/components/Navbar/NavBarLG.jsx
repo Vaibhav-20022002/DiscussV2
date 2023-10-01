@@ -80,7 +80,7 @@ const Navbar = () => {
           </Text>
         </Button>
 
-        <Menu closeOnBlur={'true'} placement="auto">
+        <Menu closeOnBlur={'true'} placement="auto" isLazy>
           <MenuButton
             color={'orange.400'}
             fontSize={'mg'}

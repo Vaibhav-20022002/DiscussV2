@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <Box
         sx={{
-          '@media screen and (max-width: 640px)': {
+          '@media screen and (max-width: 639px)': {
             display: 'none',
           },
         }}
